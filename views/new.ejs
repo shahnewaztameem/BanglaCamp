@@ -1,0 +1,23 @@
+<%- include ("partials/header.ejs") %>
+
+<div class="row">
+  <h1 class="text-center">Add a new Camp</h1>
+  <div class="form-wrapper">
+    <form action="/campgrounds" method="POST">
+      <div class="form-group">
+        <input class="form-control" type="text" name="name" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="image" placeholder="Image Url">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">Submit!</button>
+      </div>
+    </form>
+    <a href="/campgrounds" class="text-center">Go Back to Home</a>
+  </div>
+  
+</div>
+
+
+<%- include ("partials/footer.ejs") %>
