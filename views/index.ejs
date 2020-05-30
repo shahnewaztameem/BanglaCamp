@@ -1,11 +1,9 @@
 <%- include("partials/header.ejs")%>
 
 
-
-
 <div class="row">
     <div class="col-sm-12">
-        <header class="jumbotron">
+        <header class="jumbotron" >
             <h1>Welcome to BanglaCamp</h1>
             <p>
                 View our best campgrounds listing from all over the Bangladesh
@@ -17,15 +15,20 @@
     </div>
 </div>
 <div class="row text-center">
-  <div class="col-sm-6 col-md-3">
-    campgrounds will go here
-    <div class="thumbnail">
-      <img src="https://images.unsplash.com/photo-1589481470609-8870148f4889?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
-      <div class="caption">
-        <h4>Name will go here</h4>
+  <% campgrounds.forEach(campground => { %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="<%=campground.image%>" alt="">
+        <div class="caption">
+          <h4><%=campground.name%></h4>
+        </div>
+        <p>
+          <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More info</a>
+        </p>
       </div>
     </div>
-  </div>
+  <% })%>
+  
 </div>
 
 
