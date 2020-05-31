@@ -1,0 +1,68 @@
+<%- include ("../partials/header.ejs") %>
+
+<div class="row">
+  <div class="col-md-3">
+    <p class="lead"><%= campground.name%></p>
+    <div class="list-group">
+      <li class="list-group-item active">Item 1</li>
+      <li class="list-group-item">Item 2</li>
+      <li class="list-group-item">Item 3</li>
+    </div>
+  </div>
+  <div class="col-md-9">
+   
+    <div class="thumbnail">
+      <img src="<%=campground.image%>" class="img-responsive" alt="<%= campground.name%>">
+      <div class="content-wrapper">
+        <div class="caption-full">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4 class="text-left">
+                <a href="/campgrounds/<%=campground._id%>"><strong><%= campground.name%></strong></a>
+              </h4>
+            </div>
+            <div class="col-sm-6">
+              <h4 class="text-right"><strong>BDT ৳ 2000/ night</strong> </h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+                <p class="text-justify"><%= campground.description %></p>
+            </div>
+          </div>
+          
+  
+        </div>
+      </div>
+    </div>
+    <div class="well">
+      <div class="text-right">
+        <a href="/campgrounds/<%=campground._id%>/comments/new" class="btn btn-primary">Add a new comment</a>
+        <hr>
+      </div>
+      <% campground.comments.forEach(comment => { %>
+        <div class="row">
+          <div class="col-md-12">
+            <strong><%= comment.author %></strong>
+            <span class="pull-right">10 Days ago</span>
+            <p><%= comment.comment %></p>
+          </div>
+        </div>
+      <%})%>
+    </div>
+  </div>
+</div>
+
+
+
+<img src="" alt="" />
+
+<p>
+</p>
+<p>
+ 
+    
+  
+</p>
+
+<%- include ("../partials/footer.ejs") %>

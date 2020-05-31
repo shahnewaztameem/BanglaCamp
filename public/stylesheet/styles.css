@@ -42,3 +42,12 @@ body {
   color: #111;
 }
 
+.thumbnail {
+  padding: 0!important;
+}
+.thumbnail img {
+  width: 100%;
+}
+.content-wrapper {
+  padding: 15px;
+}
