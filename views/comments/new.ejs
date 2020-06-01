@@ -1,7 +1,6 @@
-<%- include ("../partials/header.ejs") %>
 
 <div class="row">
-  <h1 class="text-center">Add a new comment to <%= campground.name%></h1>
+ <div class="col-md-12">
   <div class="form-wrapper">
     <form action="/campgrounds/<%=campground._id%>/comments" method="POST">
       <div class="form-group">
@@ -10,14 +9,12 @@
       <div class="form-group">
         <input class="form-control" type="text" name="comment[author]" placeholder="Author Name">
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary btn-block">Add a new Comment!</button>
+      <div class="form-group pull-right">
+        <button class="btn btn-primary ">Add a new Comment!</button>
       </div>
     </form>
-    <a href="/campgrounds" class="text-center">Go Back to Home</a>
   </div>
+ </div>
   
 </div>
 
-
-<%- include ("../partials/footer.ejs") %>

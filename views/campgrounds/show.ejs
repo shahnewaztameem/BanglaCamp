@@ -31,13 +31,15 @@
             </div>
           </div>
           
-  
         </div>
       </div>
     </div>
     <div class="well">
       <div class="text-right">
-        <a href="/campgrounds/<%=campground._id%>/comments/new" class="btn btn-primary">Add a new comment</a>
+        
+
+        
+       <%- include("../comments/new.ejs")%>
         <hr>
       </div>
       <% campground.comments.forEach(comment => { %>
@@ -54,15 +56,5 @@
 </div>
 
 
-
-<img src="" alt="" />
-
-<p>
-</p>
-<p>
- 
-    
-  
-</p>
 
 <%- include ("../partials/footer.ejs") %>
