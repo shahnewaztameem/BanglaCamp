@@ -66,18 +66,7 @@ app.get('/campgrounds/:id', (req, res) => {
 });
 
 
-// comments routes
-app.get('/campgrounds/:id/comments/new', (req, res) => {
-  // find camp by id
-  Campground.findById(req.params.id, (error, campground) => {
-    if (error) {
-      console.log(error);
-    } else {
-      res.render('comments/new', { campground: campground });
-    }
-  })
 
-});
 
 // add a new comment
 app.post('/campgrounds/:id/comments', (req, res) => {
@@ -87,20 +76,23 @@ app.post('/campgrounds/:id/comments', (req, res) => {
       console.log(error);
       res.redirect('/campground');
     } else {
+      // create a new comment
       Comment.create(req.body.comment, (error, comment) => {
         if (error) {
           console.log(error);
         } else {
+          // push the comment to the campgroud
           campground.comments.push(comment);
           campground.save();
+           //redirect back
           res.redirect('/campgrounds/' + campground._id);
         }
       })
     }
   });
-  // create a new comment
-  // push the comment to the campgroud
-  //redirect back
+  
+  
+ 
 });
 
 var PORT = process.env.PORT || 3000;
