@@ -25,7 +25,9 @@
   
   <!-- bootstrap and stylesheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
   <link rel="stylesheet" href="/stylesheet/styles.css">
+
   <title>Banglacamp</title>
 </head>
 <body>
@@ -44,15 +46,23 @@
      
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="/">Login</span> </a>
-          </li>
-          <li>
-            <a href="/">Signup</a>
-          </li>
-          <li>
-            <a href="">Logout</a>
-          </li>
+          <% if(!currentUser) { %>
+            <li>
+              <a href="/login">Login</span> </a>
+            </li>
+            <li>
+              <a href="/signup">Signup</a>
+            </li>
+          <% } else { %>
+            <li>
+              <a href="#">Signed  in As: <%= currentUser.username%></a>
+            </li>
+            <li>
+              <a href="/logout">Logout</a>
+            </li>
+          <% } %>
+          
+          
         </ul>
       </div>
     </div>

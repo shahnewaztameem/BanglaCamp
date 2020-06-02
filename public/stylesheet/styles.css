@@ -31,7 +31,7 @@ body {
   font-weight: bold;
   color: #333;
   border-bottom: 4px solid transparent;
-  transition: border-bottom .3s ease;
+  transition: border-bottom .4s ease;
 }
 .navbar-default .navbar-nav>li>a:hover {
   border-bottom: 4px solid #111;
@@ -47,3 +47,8 @@ body {
 .content-wrapper {
   padding: 15px;
 }
+
+.author-name {
+  margin-top: 20px;
+}
+

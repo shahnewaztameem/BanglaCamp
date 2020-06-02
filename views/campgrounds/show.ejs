@@ -28,6 +28,15 @@
           <div class="row">
             <div class="col-sm-12">
                 <p class="text-justify"><%= campground.description %></p>
+                <p class="author-name text-right">
+                  Submitted by &mdash; <em><%=campground.author.username%></em>
+                </p>
+                <p>
+                  <a href="/campgrounds/<%=campground._id%>/edit" class="btn btn-warning">Edit</a>
+                  <form action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                  </form>
+                </p>
             </div>
           </div>
           
@@ -45,7 +54,7 @@
       <% campground.comments.forEach(comment => { %>
         <div class="row">
           <div class="col-md-12">
-            <strong><%= comment.author %></strong>
+            <strong><%= comment.author.username %></strong>
             <span class="pull-right">10 Days ago</span>
             <p><%= comment.comment %></p>
           </div>
@@ -54,6 +63,14 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
 
 
 
