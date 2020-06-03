@@ -1,54 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
 }
 
 body {
-  background-color: #EAECEC;
-  font-family: 'Raleway', sans-serif;
+    background-color: #eaecec;
+    font-family: 'Raleway', sans-serif;
 }
 
 .form-wrapper {
-  width: 100%;
-  margin: auto;
+    width: 100%;
+    margin: auto;
 }
 
 .navbar-default {
-  background-color: white;
-  box-shadow: 4px 6px 8px rgba(0, 0, 0, .2);
+    background-color: white;
+    box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.2);
 }
-.navbar-brand>img {
-  width: 230px;
-  margin-top: -17px;
+.navbar-brand > img {
+    width: 230px;
+    margin-top: -17px;
 }
-.navbar-default .navbar-nav>li>a {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-weight: bold;
-  color: #333;
-  border-bottom: 4px solid transparent;
-  transition: border-bottom .4s ease;
+.navbar-default .navbar-nav > li > a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 4px solid transparent;
+    transition: border-bottom 0.4s ease;
 }
-.navbar-default .navbar-nav>li>a:hover {
-  border-bottom: 4px solid #111;
-  color: #111;
+.navbar-default .navbar-nav > li > a:hover {
+    border-bottom: 4px solid #111;
+    color: #111;
 }
 
 .thumbnail {
-  padding: 0!important;
+    padding: 0 !important;
 }
 .thumbnail img {
-  width: 100%;
+    width: 100%;
 }
 .content-wrapper {
-  padding: 15px;
+    padding: 15px;
 }
 
 .author-name {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
+.ui.tiny.modal {
+    width: 400px;
+    height: 155px;
+    margin: auto;
+    font-size: 14px;
+}
+.ui.modal > .header:not(.ui) {
+    font-size: 1.7rem;
+}
+.ui.modal .actions > .button {
+    font-size: 12px;
+}
+
+.ui.negative.button{
+  font-size: 12px;
+}
+
+.ui.modal > .actions {
+    background: none;
+    border-top: none;
+}
+.ui.modal > .header {
+    border-bottom: none;
+}
+
+.s-modal-from {
+  display: inline;
+}
