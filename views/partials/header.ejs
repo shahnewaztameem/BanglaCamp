@@ -35,6 +35,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/transition.min.css" integrity="sha256-gt0FRuZd5L22CqAruA5Hbx9DXzbJS6xXzK3pEmh+1VE=" crossorigin="anonymous" />
   <!-- semantic button css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.min.css" integrity="sha256-xtpiJw1+6DW1Oac4CVyU7PbCxHxufOBIspA9T79Y384=" crossorigin="anonymous" />
+  <!-- semantic icon css  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css" integrity="sha256-KyXPF3/VOPPst/NQOzCWr97QMfSfzJLyFT0o5lYJXiQ=" crossorigin="anonymous" />
+  <!-- semantic menu  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/menu.min.css" integrity="sha256-cRSLOaiPiyfTQ4B4HT1OCF/2CWNzGcPO9Nns6Jrf4hg=" crossorigin="anonymous" />
+  <!-- semantic popup -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/popup.min.css" integrity="sha256-mvPx/uQ9/nYt7gXIRxVFSR0TtpXw4CskAMXBUmYpDfQ=" crossorigin="anonymous" />
 
   <!-- font awesome cdn css  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
@@ -69,7 +75,10 @@
             </li>
           <% } else { %>
             <li>
-              <a href="#">Signed  in As: <%= currentUser.username%></a>
+              <a href="#">Signed  in As: <%= currentUser.username%>
+                
+              
+              </a>
             </li>
             <li>
               <a href="/logout">Logout</a>

@@ -52,12 +52,18 @@ body {
     margin-top: 20px;
 }
 
-.ui.tiny.modal {
+.ui.tiny.modal,
+.ui.mini.modal,
+.ui.small.modal {
     width: 400px;
     height: 155px;
     margin: auto;
     font-size: 14px;
 }
+.ui.small.modal {
+    height: 180px;
+}
+
 .ui.modal > .header:not(.ui) {
     font-size: 1.7rem;
 }
@@ -65,8 +71,8 @@ body {
     font-size: 12px;
 }
 
-.ui.negative.button{
-  font-size: 12px;
+.ui.negative.button {
+    font-size: 12px;
 }
 
 .ui.modal > .actions {
@@ -78,5 +84,62 @@ body {
 }
 
 .s-modal-from {
-  display: inline;
+    display: inline;
+}
+
+.ui.main.menu.increased-font {
+    font-size: 12px;
+}
+
+.ui.form textarea {
+    margin: 0;
+    -webkit-appearance: none;
+    tap-highlight-color: rgba(255, 255, 255, 0);
+    padding: 0.78571429em 1em;
+    background: #fff;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    outline: 0;
+    color: rgba(0, 0, 0, 0.87);
+    border-radius: 0.28571429rem;
+    -webkit-box-shadow: 0 0 0 0 transparent inset;
+    box-shadow: 0 0 0 0 transparent inset;
+    -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+    transition: color 0.1s ease, border-color 0.1s ease;
+    font-size: 1em;
+    line-height: 1.2857;
+    resize: vertical;
+}
+.ui.form textarea {
+    width: 100%;
+    vertical-align: top;
+}
+
+.ui.small.modal > .close {
+    top: 1.0535rem;
+    right: 1rem;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.ui.small.modal textarea {
+    resize: none;
+}
+
+.ui.right.floated.green.button {
+    font-size: 12px;
+}
+
+.ui.menu .item {
+    padding: .28em 0.9em;
+    
+}
+
+.comment-wrapper {
+    background: #fff;
+    padding: 8px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-bottom-space {
+    margin-bottom: 20px !important;
 }
