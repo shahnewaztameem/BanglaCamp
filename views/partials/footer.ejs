@@ -17,7 +17,44 @@
 <!-- semantic popup  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/popup.min.js" integrity="sha256-VvJYDjsOSD6VaYYZhuQYiPOpBbpRnmaddxVd6shZ9mU=" crossorigin="anonymous"></script>
 
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous"></script>
+
+
 <!-- js file -->
 <script src="/js/app.js"></script>
+
+<script>
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "400",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+  $(document).ready(function() {
+    let errorMessage = '<%= error%>';
+    let successMessage = '<%= success%>';
+    if(errorMessage !== '') {
+      toastr.error(errorMessage);
+    } 
+    if(successMessage !== '') {
+      toastr.success(successMessage);
+    }
+
+  })
+
+</script>
 </body>
 </html>
