@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 app.use(flash());
-
+app.locals.moment = require('moment')
 
 // passport config
 app.use(require('express-session')({
@@ -46,12 +46,19 @@ app.use((req, res, next) => {
   res.locals.currentUser = req.user;
   res.locals.error = req.flash('error');
   res.locals.success = req.flash('success');
+
+  res.locals.errorFlash = req.flash('errorFlash');
+
   next();
 });
 
 app.use(indexRoutes);
 app.use('/campgrounds/:id/comments',commentRoutes);
 app.use('/campgrounds',campgroundRoutes);
+
+app.get('*', (req, res) => {
+  res.status(404).json('404');
+})
 
 // Server startup
 var PORT = process.env.PORT || 3000;

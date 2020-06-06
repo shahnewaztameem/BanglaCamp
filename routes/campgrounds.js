@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
       req.flash('error', 'Something went wrong');
       console.log(error);
     } else {
-      res.render('campgrounds/index', { campgrounds: campgrounds, currentUser: req.user });
+      res.render('campgrounds/index', { campgrounds: campgrounds, page: 'campgrounds' });
     }
   });
 });
@@ -20,13 +20,14 @@ router.get('/', (req, res) => {
 // post a new campground
 router.post('/', middleware.isLoggedIn, (req, res) => {
   var name = req.body.name;
+  var price = req.body.price;
   var image = req.body.image;
   var description = req.body.description;
   var author = {
     id: req.user._id,
     username: req.user.username
   }
-  var newCampground = { name: name, image: image, description: description, author: author };
+  var newCampground = { name: name, price: price, image: image, description: description, author: author };
   // create a new camp and save to db
   Campground.create(newCampground, function (error, newlyCreatedCampground) {
     if (error) {
@@ -51,7 +52,7 @@ router.get('/:id', (req, res) => {
     if (error || !foundCampground) {
       req.flash('error', 'Campground does not exist');
       //console.log(error);
-      res.redirect('back');
+      return res.redirect('/campgrounds');
     }
     //console.log(foundCampground);
     // render show page
@@ -62,7 +63,7 @@ router.get('/:id', (req, res) => {
 // edit CAMPGROUND
 router.get('/:id/edit', middleware.checkCampOwner, (req, res) => {
   Campground.findById(req.params.id, (error, foundCampground) => {
-    if(error) {
+    if (error) {
       req.flash('error', 'Something went wrong');
       console.log(error);
     }
@@ -86,7 +87,7 @@ router.put('/:id', middleware.checkCampOwner, (req, res) => {
 });
 
 // Destroy
-router.delete('/:id',middleware.checkCampOwner, (req, res) => {
+router.delete('/:id', middleware.checkCampOwner, (req, res) => {
 
   Campground.findByIdAndRemove(req.params.id, (error, removedCampground) => {
     if (error) {

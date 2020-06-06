@@ -8,3 +8,5 @@ $('.ui.small.modal').modal({closable: false}).modal('attach events', '.editComme
 // show tooltip on hover
 $('.edit').popup({});
 $('.delete').popup({});
+
+

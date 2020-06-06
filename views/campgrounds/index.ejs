@@ -1,19 +1,25 @@
 <%- include("../partials/header.ejs")%>
 
 
-<div class="row">
-    <div class="col-sm-12">
-        <header class="jumbotron" >
-            <h1>Welcome to BanglaCamp</h1>
-            <p>
-                View our best campgrounds listing from all over the Bangladesh
-            </p>
-            <p>
-                <a href="/campgrounds/new" class="btn btn-primary">Add a new camp</a>
-            </p>
-        </header>
-    </div>
+<div class="row header-bg header-wrapper" data-parallax="scroll" data-image-src="/img/header-bg.jpg">
+  <div class="col-sm-12">
+      <header class="text-center">
+        <div class="hero-wrapper">
+          <h1>Welcome to BanglaCamp</h1>
+          <p>
+              View our best campgrounds listing from all over the Bangladesh
+          </p>
+          <p>
+            <a href="/campgrounds/new" class="btn-custom btn-custom-1">Add a new camp</a>
+          </p>
+        </div>
+          
+      </header>
+  </div>
 </div>
+
+<div class="container">
+
 <div class="row text-center">
   <% campgrounds.forEach(campground => { %>
     <div class="col-sm-6 col-md-3">
@@ -31,6 +37,7 @@
   
 </div>
 
+</div>
 
 
 <%- include("../partials/footer.ejs")%>

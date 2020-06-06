@@ -28,17 +28,17 @@
               </h4>
             </div>
             <div class="col-sm-6">
-              <h4 class="text-right"><strong>BDT ৳ 2000/ night</strong> </h4>
+              <h4 class="text-right"><strong>BDT ৳<%= campground.price%>/ night</strong> </h4>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
                 <p class="text-justify"><%= campground.description %></p>
                 <p class="author-name text-right">
-                  Submitted by &mdash; <em><%=campground.author.username%></em>
+                  Submitted by &mdash; <em><%=campground.author.username%> , <%= moment(campground.createdAt).fromNow() %></em>
                 </p>
                 
-                <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
+                <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
                   <!-- edit button for post  -->
                   <div class="ui right floated main menu increased-font">
                     <a class="edit popup icon item" data-content="Edit This Post" data-position="bottom center" href="/campgrounds/<%=campground._id%>/edit"  data-variation="inverted">
@@ -76,10 +76,10 @@
               <div class="comment-wrapper">
 
               <strong><%= comment.author.username %></strong>
-              <span class="pull-right">10 Days ago</span>
+              <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
               <p><%= comment.comment %></p>
               </div>
-              <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+              <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
 
                 <div class="ui left floated main menu comment-bottom-space">
 

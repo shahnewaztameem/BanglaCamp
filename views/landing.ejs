@@ -1,9 +1,93 @@
-<%- include("partials/header.ejs")%>
+<!DOCTYPE html>
+<html>
+    <head>
 
-<h1>Welcome to BanglaCamp</h1>
-<a href="/campgrounds">View All campgrounds</a>
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/img/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <title>BanglaCamp</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheet/landing.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    </head>
+    <body onload="loader()">
+
+      <div id="loading"></div>
+      
+    <div class="container">
+        <!-- <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %> -->
+    </div>
+   
+    
+    <div id="landing-header">
+      <div class="hero-section">
+          <h1 class="heading">Welcome to BanglaCamp</h1>
+          <h3><span class="hero-text"></span></h3>
+        </div>
+		<a href="/campgrounds" class="btn btn-2">View All Available camps</a>
+    </div>
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+<%- include ('partials/footer') %>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+<!-- typing effect -->
+<script>
+var typed = new Typed('.hero-text', {
+  strings: ['View our best campgrounds listing from all over the Bangladesh....', 'Share Campgrounds with Camping Lovers....'],
+  smartBackspace: true, // Default value
+  typeSpeed: 40,
+  backSpeed: 40,
+  loop: true
+});
+</script>
+
+<!-- preloader -->
+<script>
+
+  var preloader = document.getElementById('loading');
+  function loader() {
+    myvar = setTimeout(showPage, 1500);
+    
+  }
+  function showPage() {
+    preloader.style.display = 'none';
+  }
+</script>
 
 
 
-<%- include("partials/footer.ejs")%>
+
 

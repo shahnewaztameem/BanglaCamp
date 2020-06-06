@@ -53,7 +53,7 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -67,18 +67,19 @@
      
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
+          
+          <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/campgrounds">Home </a></li>
+          
           <% if(!currentUser) { %>
-            <li>
+            <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
               <a href="/login">Login</span> </a>
             </li>
-            <li>
+            <li class="<%= typeof page !== 'undefined' && page === 'signup' ? 'active' : '' %>">
               <a href="/signup">Signup</a>
             </li>
           <% } else { %>
-            <li>
-              <a href="#">Signed  in As: <%= currentUser.username%>
-                
-              
+            <li >
+              <a href="#" class="n-bb">Signed  in As: <%= currentUser.username%>
               </a>
             </li>
             <li>
@@ -91,15 +92,15 @@
       </div>
     </div>
   </nav>
-  <div class="container">
-    <!-- <% if(error && error.length > 0) { %>
-      <div class="alert alert-danger ">
-        <%= error %>
-      </div>
-    <% } if(success && success.length > 0) { %>
-      <div class="alert alert-success">
-        <%= success %>
-      </div>
-    <% } %> -->
-    
+  <div class="container-fluid">
+
+    <div class="container">
+      <% if(errorFlash && errorFlash.length > 0) { %>
+        <div class="alert alert-danger ">
+          <i class="fas fa-exclamation-triangle"></i> <%= errorFlash %>
+        </div>
+      <% } %>
+      
+    </div>
+   
     
