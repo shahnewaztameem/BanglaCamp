@@ -45,7 +45,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha256-ENFZrbVzylNbgnXx0n3I1g//2WeO47XxoPe0vkp3NC8=" crossorigin="anonymous" />
   <!-- font awesome cdn css  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
-
+  <!-- animate css  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
   <!-- custom css -->
   <link rel="stylesheet" href="/stylesheet/styles.css">
 
@@ -53,54 +54,60 @@
 </head>
 <body>
   
+  <div class="">
 
-  <!-- navbar  -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="/" class="navbar-brand"><img src="/img/logo.png" alt="Logo"></a>
+    <!-- navbar  -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand"><img src="/img/logo.png" alt="Logo"></a>
+        </div>
+      
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/campgrounds">Home </a></li>
+            
+            <% if(!currentUser) { %>
+              <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
+                <a href="/login">Login</span> </a>
+              </li>
+              <li class="<%= typeof page !== 'undefined' && page === 'signup' ? 'active' : '' %>">
+                <a href="/signup">Signup</a>
+              </li>
+            <% } else { %>
+              <li >
+                <a href="/users/<%=currentUser.id%>" class="n-bb">Signed  in As: <%= currentUser.username%>
+                </a>
+              </li>
+              <li>
+                <a href="/logout">Logout</a>
+              </li>
+            <% } %>
+            
+            
+          </ul>
+        </div>
       </div>
-     
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          
-          <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/campgrounds">Home </a></li>
-          
-          <% if(!currentUser) { %>
-            <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
-              <a href="/login">Login</span> </a>
-            </li>
-            <li class="<%= typeof page !== 'undefined' && page === 'signup' ? 'active' : '' %>">
-              <a href="/signup">Signup</a>
-            </li>
-          <% } else { %>
-            <li >
-              <a href="#" class="n-bb">Signed  in As: <%= currentUser.username%>
-              </a>
-            </li>
-            <li>
-              <a href="/logout">Logout</a>
-            </li>
-          <% } %>
-          
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
+  </div>
   <div class="container-fluid">
     <!-- error messages -->
     <div class="container">
       <% if(errorFlash && errorFlash.length > 0) { %>
         <div class="alert alert-danger ">
           <i class="fas fa-exclamation-triangle"></i> <%= errorFlash %>
+        </div>
+      <% } if(successFlash && successFlash.length > 0) { %>
+        <div class="alert alert-success ">
+          <%= successFlash %>
         </div>
       <% } %>
       

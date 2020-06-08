@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
+
 var commentSchema = new mongoose.Schema({
   comment: String,
   createdAt: { type: Date, default: Date.now },
@@ -11,5 +12,6 @@ var commentSchema = new mongoose.Schema({
     username: String
   }
 });
+
 
 module.exports = mongoose.model('Comment', commentSchema);

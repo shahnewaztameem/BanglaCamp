@@ -89,18 +89,15 @@ router.put('/:id', middleware.checkCampOwner, (req, res) => {
 // Destroy
 router.delete('/:id', middleware.checkCampOwner, (req, res) => {
 
-  Campground.findByIdAndRemove(req.params.id, (error, removedCampground) => {
+  Campground.findById(req.params.id, (error, removedCampground) => {
     if (error) {
       req.flash('error', 'Something went wrong');
       //console.log(error);
     }
-    Comment.deleteMany({ _id: { $in: removedCampground.comments } }, (error) => {
-      if (error) {
-        console.log(error);
-      }
-      req.flash('success', 'Campground Deleted successfully');
-      res.redirect('/campgrounds');
-    })
+    removedCampground.remove();
+    req.flash('success', 'Campground Deleted successfully');
+    res.redirect('/campgrounds');
+    
   });
 })
 

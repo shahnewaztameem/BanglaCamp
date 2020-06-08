@@ -1,21 +1,45 @@
 <%- include ('partials/header.ejs')%>
 
-<form action="/signup" method="POST">
-  <div class="form-group">
-    <input type="text" name="username" id="" class="form-control" placeholder="Username">
-  </div>
-
-  <div class="form-group">
-    <input type="password" name="password" id="" class="form-control" placeholder="Password">
-  </div>
-
-  <div class="form-group">
-    <input type="text" name="adminCode" id="" class="form-control" placeholder="Admin secret code">
-  </div>
-
-  <div class="form-group">
-    <button class="btn btn-primary">Signup!</button>
-  </div>
+<div class="container">
   
-</form>
+    <!-- singup form -->
+    <form action="/signup" method="POST">
+      <div class="form-group">
+        <input type="text" name="username" id="" class="form-control" placeholder="Username">
+      </div>
+    
+      <div class="form-group">
+        <input type="password" name="password" id="" class="form-control" placeholder="Password">
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="email" id="" class="form-control" placeholder="Email">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="firstName" id="" class="form-control" placeholder="First Name">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="lastName" id="" class="form-control" placeholder="Last Name">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="pictureUrl" id="" class="form-control" placeholder="Profile Picture Url">
+      </div>
+    
+      <div class="form-group">
+        <input type="text" name="adminCode" id="" class="form-control" placeholder="Admin secret code">
+      </div>
+
+      
+    
+      <div class="form-group">
+        <button class="btn btn-primary">Signup!</button>
+      </div>
+      
+    </form>
+  
+</div>
+
 <%- include ('partials/footer.ejs')%>

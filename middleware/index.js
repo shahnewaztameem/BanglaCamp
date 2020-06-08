@@ -1,13 +1,34 @@
-var Campground = require('../models/campground')
-var Comment = require('../models/comment')
+var Campground = require('../models/campground');
+var Comment = require('../models/comment');
+var User = require('../models/user');
 // middleswares
 
 var middlewares = {
+  checkProfileOwner: function(req, res, next) {
+    if(req.isAuthenticated()){
+      User.findById(req.params.userId, (error, foundUser) => {
+        if(error || !foundUser) {
+          req.flash('error', 'User does not exist');
+          res.redirect('/campgrounds');
+        } else {
+          if(foundUser._id.equals(req.user._id)) {
+            next();
+          } else {
+            req.flash('error', 'You don\'t have permission to access this page!');
+            res.redirect('/campgrounds');
+          }
+        }
+      });
+    } else {
+      req.flash('error', 'You don\'t have permission to access this page!');
+      res.redirect('/campgrounds');
+    }
+  },
   checkCampOwner: function (req, res, next) {
     if (req.isAuthenticated()) {
       Campground.findById(req.params.id, (error, foundCampground) => {
         if (error || !foundCampground) {
-          req.flash('error', 'Campgroun does not exits');
+          req.flash('error', 'Campground does not exist');
           res.redirect('/campgrounds');
         } else {
           // does the user own the campground

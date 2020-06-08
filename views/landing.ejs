@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="/stylesheet/landing.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
     </head>
-    <body onload="loader()">
+    <body>
 
       <div id="loading"></div>
       
@@ -42,14 +42,15 @@
         <% } %> -->
     </div>
    
-    
+    <!-- header  -->
     <div id="landing-header">
       <div class="hero-section">
           <h1 class="heading">Welcome to BanglaCamp</h1>
           <h3><span class="hero-text"></span></h3>
-        </div>
-		<a href="/campgrounds" class="btn btn-2">View All Available camps</a>
+      </div>
+		  <a href="/campgrounds" class="btn btn-2">View All Available camps</a>
     </div>
+    <!-- image css slider  -->
     <ul class="slideshow">
       <li></li>
       <li></li>
@@ -77,14 +78,14 @@ var typed = new Typed('.hero-text', {
 <!-- preloader -->
 <script>
 
-  var preloader = document.getElementById('loading');
-  function loader() {
-    myvar = setTimeout(showPage, 1500);
+  // var preloader = document.getElementById('loading');
+  // function loader() {
+  //   myvar = setTimeout(showPage, 1500);
     
-  }
-  function showPage() {
-    preloader.style.display = 'none';
-  }
+  // }
+  // function showPage() {
+  //   preloader.style.display = 'none';
+  // }
 </script>
 
 

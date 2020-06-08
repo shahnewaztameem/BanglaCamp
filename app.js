@@ -10,11 +10,14 @@ var User = require('./models/user');
 var methodOverride = require('method-override');
 var app = express();
 var seedDB = require('./seeds');
+require('dotenv').config()
 
 // Routes
+var userRoutes = require('./routes/users');
 var campgroundRoutes = require('./routes/campgrounds');
 var commentRoutes = require('./routes/comments');
 var indexRoutes = require('./routes');
+
 
 // seedDB();
 
@@ -48,6 +51,7 @@ app.use((req, res, next) => {
   res.locals.success = req.flash('success');
 
   res.locals.errorFlash = req.flash('errorFlash');
+  res.locals.successFlash = req.flash('successFlash');
 
   next();
 });
@@ -55,6 +59,7 @@ app.use((req, res, next) => {
 app.use(indexRoutes);
 app.use('/campgrounds/:id/comments',commentRoutes);
 app.use('/campgrounds',campgroundRoutes);
+app.use('/users',userRoutes);
 
 app.get('*', (req, res) => {
   res.status(404).json('404');

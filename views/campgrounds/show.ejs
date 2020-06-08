@@ -1,5 +1,6 @@
 <%- include ("../partials/header.ejs") %>
 
+<div class="container">
 <div class="row">
   <div class="col-md-3">
     <p class="lead"><%= campground.name%></p>
@@ -35,7 +36,7 @@
             <div class="col-sm-12">
                 <p class="text-justify"><%= campground.description %></p>
                 <p class="author-name text-right">
-                  Submitted by &mdash; <em><%=campground.author.username%> , <%= moment(campground.createdAt).fromNow() %></em>
+                  Submitted by &mdash; <em><a href="/users/<%=campground.author.id%>"><%=campground.author.username%></a> , <%= moment(campground.createdAt).fromNow() %></em>
                 </p>
                 
                 <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
@@ -174,7 +175,7 @@
   </div>
 </div>
 
-
+</div>
 
 
 

@@ -1,0 +1,48 @@
+<%- include ("../partials/header.ejs") %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="thumbnail">
+
+      <img src="<%=user.profilePicture%>" alt="<%=user.username%> Profile Picture" class="img-responsive">
+      <div class="caption user-mail-bg p-2">
+        <i class="far fa-envelope"></i> &nbsp;<a href="mailto:<%= user.email%>"><%= user.email%></a>
+      </div>
+
+    </div>
+    <h3 class="username"><%= user.username%></h3>
+   
+    
+    <% if(currentUser && user._id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
+      <a href="/users/<%=user._id%>/edit" class="btn btn-primary btn-block">Edit</a>
+    <% } %>
+    
+    </div>
+
+    <div class="col-md-9">
+      <h3 style="margin-top:0">Campground created by <%= user.username%></h3>
+
+      <div class="row">
+      <% campgrounds.forEach(campground => { %>
+       
+        
+          <div class="col-md-6">
+            <div class="thumbnail">
+             
+              <div class="caption">
+                <h4><a href="/campgrounds/<%= campground._id%>"><%= campground.name%></a></h4>
+                <p><%= campground.description.substring(0,40) %>.......</p>
+                
+              </div>
+            </div>
+          </div>
+      <% })%>
+    </div>
+    </div>
+  </div>
+    
+  </div>
+</div>
+
+<%- include ("../partials/footer.ejs") %>
