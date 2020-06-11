@@ -176,9 +176,10 @@ body {
 
 .comment-wrapper {
     background: #fff;
-    padding: 8px 10px;
+    padding: 8px 5px;
     border-radius: 10px;
     margin-bottom: 10px;
+    background: rgba(241, 241, 241, 0.568);
 }
 
 .comment-bottom-space {
