@@ -22,7 +22,7 @@ var indexRoutes = require('./routes');
 // seedDB();
 
 // DB connects
-mongoose.connect("mongodb://localhost/bangla_camp", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.DB_CONNECTION || "mongodb://localhost/bangla_camp", { useNewUrlParser: true, useUnifiedTopology: true });
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
@@ -62,7 +62,7 @@ app.use('/campgrounds',campgroundRoutes);
 app.use('/users',userRoutes);
 
 app.get('*', (req, res) => {
-  res.status(404).json('404');
+  res.render('404');
 })
 
 // Server startup

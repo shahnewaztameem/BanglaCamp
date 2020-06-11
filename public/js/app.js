@@ -47,7 +47,7 @@ const password = document.getElementById('password')
 const email = document.getElementById('email')
 const firstName = document.getElementById('firstName')
 const lastName = document.getElementById('lastName')
-const pictureUrl = document.getElementById('pictureUrl')
+
 const comment = document.getElementById('comment')
 const editComment = document.getElementById('editComment')
 const error = document.getElementById('error')
@@ -145,10 +145,7 @@ function validateSignUp() {
 		return false;
 	}
 
-	else if (!urlRegex.test(String(pictureUrl.value.trim()).toLowerCase())) {
-		error.innerHTML = `<div class="alert alert-danger"><strong><i class="fas fa-exclamation-triangle"></i> Picture Url is not valid</strong></div>`;
-		return false;
-	}
+	
 
 }
 
@@ -205,15 +202,5 @@ function validateCreatCamp() {
 		error.innerHTML = `<div class="alert alert-danger"><strong><i class="fas fa-exclamation-triangle"></i> Picture Url is not valid</strong></div>`;
 		return false;
 	}
-
-	else if(campDescription.value.trim() === '') {
-		error.innerHTML = `<div class="alert alert-danger"><strong><i class="fas fa-exclamation-triangle"></i> Camp decription is required!</strong></div>`;
-		return false;
-	}
-
-	// else if(campDescription.value.trim().length < 20) {
-	// 	error.innerHTML = `<div class="alert alert-danger"><strong><i class="fas fa-exclamation-triangle"></i> Camp decription needs to be at least 20 characters long!</strong></div>`;
-	// 	return false;
-	// }
 
 }

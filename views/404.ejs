@@ -22,68 +22,35 @@
 
         <title>BanglaCamp</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/stylesheet/landing.css">
+        <link rel="stylesheet" href="/stylesheet/lost.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
     </head>
     <body>
-      
-
-    <div class="container">
-        <!-- <% if(error && error.length > 0){ %>
-            <div class="alert alert-danger" role="alert">
-                <%= error %>
-            </div>
-        <% } %>
-        <% if(success && success.length > 0){ %>
-            <div class="alert alert-success" role="alert">
-                <%= success %>
-            </div>
-        <% } %> -->
-    </div>
-   
-    <!-- header  -->
-    <div id="landing-header">
-      <div class="hero-section">
-          <h1 class="heading">Welcome to BanglaCamp</h1>
-          <h3><span class="hero-text"></span></h3>
-      </div>
-		  <a href="/campgrounds" class="btn btn-2">View All Available camps</a>
-    </div>
-    <!-- image css slider  -->
-    <ul class="slideshow">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <div class="loader-wrapper">
-      <span class="loader"><span class="loader-inner"></span></span>
-    </div>
-<%- include ('partials/footer') %>
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<section class="page_404">
+	<div class="container">
+		<div class="row">	
+		<div class="col-sm-12 ">
+		<div class="col-sm-10 col-sm-offset-1  text-center">
+		<div class="four_zero_four_bg">
+			<h1 class="text-center ">404</h1>
+		
+		
+		</div>
+		
+		<div class="contant_box_404">
+		<h3 class="h2">
+		Look like you're lost
+		</h3>
+		
+		<p>the page you are looking for not avaible!</p>
+		
+		<a href="/campgrounds" class="link_404">Go to Home</a>
+	</div>
+		</div>
+		</div>
+		</div>
+	</div>
+</section>
 
 
-<!-- typing effect -->
-<script>
-var typed = new Typed('.hero-text', {
-  strings: ['View our best campgrounds listing from all over the Bangladesh....', 'Share Campgrounds with Camping Lovers....'],
-  smartBackspace: true, // Default value
-  typeSpeed: 40,
-  backSpeed: 40,
-  loop: true
-});
-</script>
-
-<!-- preloader -->
-<script>
-  $(window).on("load",function(){
-    $(".loader-wrapper").fadeOut("slow");
-  });
-</script>
-
-
-
-
-
+<%- include ('partials/footer.ejs')%>

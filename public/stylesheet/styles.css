@@ -26,7 +26,7 @@ body {
     margin-top: 120px;
 }
 .well {
-    background:#fff!important;
+    background: #fff !important;
 }
 .header-wrapper {
     margin-bottom: 50px;
@@ -805,11 +805,14 @@ a.btn-custom {
     margin-top: 350px;
 }
 
-a.custom-btn, a.custom-btn-2, a.custom-btn-3 {
+a.custom-btn,
+a.custom-btn-2,
+a.custom-btn-3 {
     text-decoration: none;
 }
 .custom-btn,
-.custom-btn-2, .custom-btn-3 {
+.custom-btn-2,
+.custom-btn-3 {
     font-weight: bold;
     display: block;
     width: 100%;
@@ -830,7 +833,9 @@ a.custom-btn, a.custom-btn-2, a.custom-btn-3 {
 .custom-btn-2 {
     padding: 10px 20px;
 }
-.custom-btn:hover, .custom-btn-2:hover, .custom-btn-3:hover {
+.custom-btn:hover,
+.custom-btn-2:hover,
+.custom-btn-3:hover {
     background-position: right;
     color: #fff;
 }
@@ -862,3 +867,5 @@ a.custom-btn, a.custom-btn-2, a.custom-btn-3 {
     display: block;
     margin: auto;
 }
+
+
