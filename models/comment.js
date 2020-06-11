@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+var Campground = require('../models/campground')
 
 var commentSchema = new mongoose.Schema({
   comment: String,
@@ -12,6 +12,7 @@ var commentSchema = new mongoose.Schema({
     username: String
   }
 });
+
 
 
 module.exports = mongoose.model('Comment', commentSchema);

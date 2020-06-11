@@ -1,9 +1,119 @@
 <%- include ('partials/header.ejs')%>
 
-<div class="container">
-  
+  <!-- new signup -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4 text-center custom-mgb">
+        <div id="error"></div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="signup-wrapper">
+        <div class="login-container wow animate__animated animate__fadeIn">
+          <div class="login-content">
+            <form action="/signup" method="POST" onsubmit="return validateSignUp()">
+              <img src="/img/signup.svg">
+              <h2 class="title">Signup</h2>
+                     <div class="input-div one">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Username</h5>
+                            <input type="text" class="input" name="username" id="username" autocomplete="off">
+                        </div>
+                     </div>
+    
+                     <div class="input-div pass">
+                        <div class="i"> 
+                           <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="div">
+                           <h5>Password</h5>
+                           <input type="password" class="input" name="password" id="password" autocomplete="off">
+                       </div>
+                    </div>
+    
+                    <div class="input-div pass">
+                      <div class="i">
+                          <i class="fas fa-envelope"></i>
+                      </div>
+                      <div class="div">
+                          <h5>Email</h5>
+                          <input type="email" class="input" name="email" id="email" autocomplete="off">
+                      </div>
+                   </div>
+    
+                   <div class="input-div pass">
+                    <div class="i">
+                      <i class="fas fa-id-card-alt"></i>
+                    </div>
+                    <div class="div">
+                        <h5>First Name</h5>
+                        <input type="text" class="input" name="firstName" id="firstName" autocomplete="off">
+                    </div>
+                 </div>
+    
+                 <div class="input-div pass">
+                  <div class="i">
+                    <i class="fas fa-id-card-alt"></i>
+                  </div>
+                  <div class="div">
+                      <h5>Last Name</h5>
+                      <input type="text" class="input" name="lastName" id="lastName" autocomplete="off">
+                  </div>
+               </div>
+    
+               <div class="input-div pass">
+                <div class="i">
+                  <i class="fas fa-portrait"></i>
+                </div>
+                <div class="div">
+                    <h5>Profile Picture Url</h5>
+                    <input type="text" class="input" name="pictureUrl" id="pictureUrl" autocomplete="off">
+                </div>
+             </div>
+    
+             <div class="input-div pass">
+              <div class="i">
+                <i class="fas fa-user-shield"></i>
+              </div>
+              <div class="div">
+                  <h5>Admin Code</h5>
+                  <input type="text" class="input" name="adminCode" autocomplete="off">
+              </div>
+           </div>
+           <br>
+              <input type="submit" class="btn" value="Signup">
+    
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  <!-- new signup ends-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- singup form -->
-    <form action="/signup" method="POST">
+    <!-- <form action="/signup" method="POST">
       <div class="form-group">
         <input type="text" name="username" id="" class="form-control" placeholder="Username">
       </div>
@@ -40,6 +150,6 @@
       
     </form>
   
-</div>
+</div> -->
 
 <%- include ('partials/footer.ejs')%>

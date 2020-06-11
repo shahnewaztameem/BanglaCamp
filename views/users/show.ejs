@@ -15,7 +15,7 @@
    
     
     <% if(currentUser && user._id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
-      <a href="/users/<%=user._id%>/edit" class="btn btn-primary btn-block">Edit</a>
+      <a href="/users/<%=user._id%>/edit" class="custom-btn">Edit</a>
     <% } %>
     
     </div>
@@ -24,20 +24,26 @@
       <h3 style="margin-top:0">Campground created by <%= user.username%></h3>
 
       <div class="row">
-      <% campgrounds.forEach(campground => { %>
-       
-        
-          <div class="col-md-6">
-            <div class="thumbnail">
-             
-              <div class="caption">
-                <h4><a href="/campgrounds/<%= campground._id%>"><%= campground.name%></a></h4>
-                <p><%= campground.description.substring(0,40) %>.......</p>
-                
+        <% if(campgrounds.length > 0) { %>
+          <% campgrounds.forEach(campground => { %>
+            <div class="col-md-6">
+              <div class="thumbnail">
+                <div class="caption">
+                  <h4><a href="/campgrounds/<%= campground._id%>"><%= campground.name%></a></h4>
+                  </p><%- campground.description.substring(0,40)%> </p>
+                  <p class="text-right">
+                    <i class="far fa-comment"></i> <%= campground.comments.length%>
+                  </p>
+                </div>
               </div>
             </div>
+        <% })%>
+        <% } else { %>
+          <div class="col-md-6">
+            <h4>This user has not created any campgrounds yet</h4>
           </div>
-      <% })%>
+        <% } %>
+      
     </div>
     </div>
   </div>

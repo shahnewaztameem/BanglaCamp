@@ -51,10 +51,14 @@
   <link rel="stylesheet" href="/stylesheet/styles.css">
 
   <title>Banglacamp</title>
+
+  <!-- tinymce -->
+  <script src="https://cdn.tiny.cloud/1/ar8odrmo0uxi383fex8wegue5tohaa1wx8ww6v5wrvpht99z/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
+
   
-  <div class="">
+  <div>
 
     <!-- navbar  -->
     <nav class="navbar navbar-default">
@@ -71,6 +75,26 @@
       
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
+            
+             <!-- search form -->
+               
+
+                
+              <form action="/campgrounds" method="GET" class="search-form">
+                <div class="searchBox">
+
+                  <input class="searchInput" type="text" name="search" placeholder="Campground search..." autocomplete="off">
+
+                  <button class="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+                </div>
+
+                
+                
+              </form>
+           
+            
             
             <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/campgrounds">Home </a></li>
             
@@ -101,16 +125,19 @@
   <div class="container-fluid">
     <!-- error messages -->
     <div class="container">
-      <% if(errorFlash && errorFlash.length > 0) { %>
-        <div class="alert alert-danger ">
-          <i class="fas fa-exclamation-triangle"></i> <%= errorFlash %>
-        </div>
-      <% } if(successFlash && successFlash.length > 0) { %>
-        <div class="alert alert-success ">
-          <%= successFlash %>
-        </div>
-      <% } %>
+     <div class="row text-center">
+      <div class="col-md-offset-4 col-md-4">
+        <% if(errorFlash && errorFlash.length > 0) { %>
+          <div class="alert alert-danger" style="margin-bottom: 0;">
+            <i class="fas fa-exclamation-triangle"></i> <%= errorFlash %>
+          </div>
+        <% } if(successFlash && successFlash.length > 0) { %>
+          <div class="alert alert-success ">
+            <%= successFlash %>
+          </div>
+        <% } %>
+      </div>
+     </div>
       
     </div>
    
-    

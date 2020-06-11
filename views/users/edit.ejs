@@ -1,9 +1,105 @@
 <%- include ('../partials/header.ejs')%>
 
 <div class="container">
+
+  <!-- new signup -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4 text-center custom-mgb">
+        <div id="error"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="signup-wrapper">
+        <div class="login-container wow animate__animated animate__fadeIn">
+          <div class="login-content">
+            <form action="/users/<%=user._id%>?_method=PUT" method="POST" onsubmit="return validateSignUp()">
+              <img src="/img/edit.svg">
+              <h2 class="title">Edit Profile</h2>
+                     <div class="input-div one">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+                            
+                            <input type="text" class="input" name="username" id="username" autocomplete="off" value="<%=user.username%>" placeholder="username">
+                        </div>
+                     </div>
+    
+                     
+    
+                    <div class="input-div pass">
+                      <div class="i">
+                          <i class="fas fa-envelope"></i>
+                      </div>
+                      <div class="div">
+                          
+                          <input type="email" class="input" name="email" id="email" autocomplete="off" value="<%= user.email%>" placeholder="Email">
+                      </div>
+                   </div>
+    
+                   <div class="input-div pass">
+                    <div class="i">
+                      <i class="fas fa-id-card-alt"></i>
+                    </div>
+                    <div class="div">
+                        
+                        <input type="text" class="input" name="firstName" id="firstName" autocomplete="off" value="<%= user.firstName%>" placeholder="Firstname">
+                    </div>
+                 </div>
+    
+                 <div class="input-div pass">
+                  <div class="i">
+                    <i class="fas fa-id-card-alt"></i>
+                  </div>
+                  <div class="div">
+                      
+                      <input type="text" class="input" name="lastName" id="lastName" autocomplete="off" value="<%= user.lastName%>" placeholder="Lastname">
+                  </div>
+               </div>
+    
+               <div class="input-div pass">
+                <div class="i">
+                  <i class="fas fa-portrait"></i>
+                </div>
+                <div class="div">
+                    
+                    <input type="text" class="input" name="pictureUrl" id="pictureUrl" autocomplete="off" value="<%= user.profilePicture%>" placeholder="Profile picture url">
+                </div>
+             </div>
+    
+            
+           <br>
+          <input type="submit" class="btn" value="Update Profile">
+    
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
     <!-- singup form -->
-    <form action="/users/<%=user._id%>?_method=PUT" method="POST">
+    <!-- <form action="/users/<%=user._id%>?_method=PUT" method="POST">
       <div class="form-group">
         <input type="text" name="username" id="" class="form-control" placeholder="Username" value="<%= user.username%>">
       </div>
@@ -33,7 +129,7 @@
         <button class="btn btn-primary">Update Profile</button>
       </div>
       
-    </form>
+    </form> -->
 </div>
 
 <%- include ('../partials/footer.ejs')%>

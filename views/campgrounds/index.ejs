@@ -19,6 +19,13 @@
 </div>
 
 <div class="container">
+  <div class="row text-center">
+    <div class="col-md-12">
+    <% if(noMatch !== null) { %>
+      <h2><%= noMatch %></h2>
+    <% } %>
+    </div>
+  </div>
 
 <!-- show all campground -->
 
@@ -31,7 +38,7 @@
             <h4><%=campground.name%></h4>
           </div>
           <p>
-            <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More info</a>
+            <a href="/campgrounds/<%= campground._id %>" class="custom-btn-3">More info</a>
           </p>
         </div>
       </div>

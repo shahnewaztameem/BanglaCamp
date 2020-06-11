@@ -34,7 +34,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12">
-                <p class="text-justify"><%= campground.description %></p>
+                <p class="text-justify"><%- campground.description %></p>
                 <p class="author-name text-right">
                   Submitted by &mdash; <em><a href="/users/<%=campground.author.id%>"><%=campground.author.username%></a> , <%= moment(campground.createdAt).fromNow() %></em>
                 </p>
@@ -107,11 +107,12 @@
                         
                         <div class="field">
                           
-                          <form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit?_method=PUT" method="POST">
+                          <form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit?_method=PUT" method="POST" onsubmit="return validateEditComment()">
                             <div class="form-group">
-                              <textarea name="comment[comment]" id="" class="editComment"><%= comment.comment%></textarea>
+                              <textarea name="comment[comment]" id="editComment" class="editComment"><%= comment.comment%></textarea>
                           </div>
                       </div>
+                      <div id="uierror"></div>
                       <button class="ui right floated green button ">Edit</button>
                     </form>
                       </div>
@@ -181,7 +182,3 @@
 
 <%- include ("../partials/footer.ejs") %>
 
-<script>
-
-autosize($('.editComment'));
-</script>

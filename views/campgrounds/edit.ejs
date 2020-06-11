@@ -1,24 +1,39 @@
 <%- include ("../partials/header.ejs") %>
 
+
 <div class="container">
   <div class="row">
+     <!-- show js errors  -->
+    <div class="col-md-offset-4 col-md-4 text-center custom-mgt">
+      <div id="error"></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+
+    <div class="img-wrapper">
+      <img src="/img/camp.svg" class="img-responsive"alt="">
+    </div>
+
     <h1 class="text-center">Edit <%= campground.name %></h1>
     <div class="form-wrapper">
-      <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
+      <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" onsubmit="return validateCreatCamp()">
         <div class="form-group">
-          <input class="form-control" type="text" name="campground[name]" placeholder="Name" value="<%= campground.name%>">
+          <input class="form-control" type="text" name="campground[name]" id="campName" placeholder="Name" value="<%= campground.name%>">
         </div>
         <div class="form-group">
-          <input class="form-control" type="number" name="campground[price]" placeholder="Price" min="1.0" step="1.0" value="<%= campground.price%>">
+          <input class="form-control" type="number" name="campground[price]" id="campPrice"  placeholder="Price" min="1.0" step="1.0" value="<%= campground.price%>">
         </div>
         <div class="form-group">
-          <input class="form-control" type="text" name="campground[image]" placeholder="Image Url" value="<%= campground.image%>">
+          <input class="form-control" type="text" name="campground[image]" id="campImageUrl" placeholder="Image Url" value="<%= campground.image%>">
         </div>
         <div class="form-group">
-          <input class="form-control" type="text" name="campground[description]" placeholder="Description" value="<%= campground.description%>">
+          <textarea class="form-control" type="text" name="campground[description]" id="campDescription"><%= campground.description%></textarea>
+          
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-block">Submit!</button>
+          <button class="custom-btn">Submit!</button>
         </div>
       </form>
       <a href="/campgrounds" class="text-center">Go Back to Home</a>
