@@ -30,7 +30,7 @@ campgroundSchema.pre('remove', async function (next) {
         $in: this.comments,
       },
     });
-    next();
+    
   } catch (e) {
     next(e)
   }

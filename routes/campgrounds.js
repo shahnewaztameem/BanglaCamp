@@ -6,6 +6,7 @@ var middleware = require('../middleware');
 
 // INDEX
 router.get('/', (req, res) => {
+  
   var noMatch = null;
   if (req.query.search) {
     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
@@ -91,7 +92,7 @@ router.get('/:id/edit', middleware.checkCampOwner, (req, res) => {
 // update CAMPGROUND
 router.put('/:id', middleware.checkCampOwner, (req, res) => {
   // find and update
-  Campground.findOneAndUpdate(req.params.id, req.body.campground, (error, updatedCampground) => {
+  Campground.findByIdAndUpdate(req.params.id, req.body.campground, (error, updatedCampground) => {
     if (error) {
       req.flash('error', 'Something went wrong');
       res.redirect('/campgrounds');
@@ -111,10 +112,12 @@ router.delete('/:id', middleware.checkCampOwner, (req, res) => {
     if (error) {
       req.flash('error', 'Something went wrong');
       //console.log(error);
-    }
+    } 
+
     removedCampground.remove();
     req.flash('success', 'Campground Deleted successfully');
     res.redirect('/campgrounds');
+    
 
   });
 })
