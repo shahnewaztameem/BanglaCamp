@@ -90,7 +90,7 @@
                     </button>
 
                     <!-- delete button for comment  -->
-                    <button class="btn button deleteComment popup delete popup icon item" data-content="Delete This Comment" data-position="bottom center" data-variation="inverted">
+                    <button class="btn button deleteComment popup icon item delete-trigger" data-content="Delete This Comment" data-position="bottom center" data-variation="inverted" data-id="<%= comment._id%>">
                         <i class="trash alternate icon"></i>
 
                     </button>
@@ -124,23 +124,23 @@
 
 
 
-                            <!-- modal delete comment confirmation -->
+            <!-- modal delete comment confirmation -->
 
-                            <div class="ui mini modal">
-                                <div class="header">Delete Your Comment</div>
-                                <div class="content">
-                                    <p>Are you sure you want to delete this comment?</p>
-                                </div>
-                                <div class="actions">
-                                    <div class="ui positive button">No</div>
-                                    <form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST" class="s-modal-from">
-                                        <button class="ui negative button">Delete</button>
-                                    </form>
-                                </div>
-                            </div>
+            <div class="ui mini modal" id="modal-delete-<%=comment._id%>">
+                <div class="header">Delete Your Comment</div>
+                <div class="content">
+                    <p>Are you sure you want to delete this comment?</p>
+                </div>
+                <div class="actions">
+                    <div class="ui positive button">No</div>
+                    <form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST" class="s-modal-from">
+                        <button class="ui negative button">Delete</button>
+                    </form>
+                </div>
+            </div>
 
 
-                            <% } %>
+            <% } %>
 
 
                         </div>
