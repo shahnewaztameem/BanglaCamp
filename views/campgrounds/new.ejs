@@ -2,40 +2,40 @@
 
 
 <div class="container">
-  <div class="row">
-     <!-- show js errors  -->
-    <div class="col-md-offset-4 col-md-4 text-center custom-mgt">
-      <div id="error"></div>
+    <div class="row">
+        <!-- show js errors  -->
+        <div class="col-md-offset-4 col-md-4 text-center custom-mgt">
+            <div id="error"></div>
+        </div>
     </div>
-  </div>
 </div>
 <div class="container">
     <div class="row">
-    <div class="img-wrapper">
-      <img src="/img/camp.svg" class="img-responsive"alt="">
+        <div class="img-wrapper">
+            <img src="/img/camp.svg" class="img-responsive" alt="">
+        </div>
+        <h1 class="text-center">Add a new Camp</h1>
+        <div class="form-wrapper">
+            <form action="/campgrounds" method="POST" onsubmit="return validateCreatCamp()">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" id="campName" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name="price" id="campPrice" placeholder="Price" min="1.0" step="1.0">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="image" id="campImageUrl" placeholder="Image Url">
+                </div>
+                <div class="form-group">
+                    <textarea name="description" id="campDescription" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="custom-btn" type="submit">Submit!</button>
+                </div>
+            </form>
+            <a href="/campgrounds" class="text-center">Go Back to Home</a>
+        </div>
+
     </div>
-    <h1 class="text-center">Add a new Camp</h1>
-    <div class="form-wrapper">
-      <form action="/campgrounds" method="POST" onsubmit="return validateCreatCamp()">
-        <div class="form-group">
-          <input class="form-control" type="text" name="name" id="campName" placeholder="Name">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="number" name="price" id="campPrice" placeholder="Price" min="1.0" step="1.0">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="image" id="campImageUrl" placeholder="Image Url">
-        </div>
-        <div class="form-group">
-          <textarea name="description" id="campDescription" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-          <button class="custom-btn" type="submit">Submit!</button>
-        </div>
-      </form>
-      <a href="/campgrounds" class="text-center">Go Back to Home</a>
-    </div>
-    
-  </div> 
 </div>
 <%- include ("../partials/footer.ejs") %>

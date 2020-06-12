@@ -3,11 +3,23 @@ $('.ui.tiny.modal').modal({
 }).modal('attach events', '.delete.button', 'show');
 
 $('.ui.mini.modal').modal({}).modal('attach events', '.deleteComment.button', 'show');
-$('.ui.small.modal').modal({ closable: false }).modal('attach events', '.editComment.button', 'show');
+//$('.ui.small.modal').modal({ closable: false }).modal('attach events', '.editComment.button', 'show');
+
+
+$('.edit-trigger').click(function(event){
+	var triggerItem = $(this).attr('data-id');   
+
+	$('#modal-' + triggerItem).modal('show');
+});
+
+
+
 
 // show tooltip on hover
 $('.edit').popup({});
 $('.delete').popup({});
+
+
 
 // tiny mce init
 tinymce.init({

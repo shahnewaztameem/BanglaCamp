@@ -2,50 +2,50 @@
 
 
 <div class="row header-bg header-wrapper" data-parallax="scroll" data-image-src="/img/header-bg.jpg">
-  <div class="col-sm-12">
-      <header class="text-center">
-        <div class="hero-wrapper wow animate__animated animate__fadeInUp">
-          <h1>Welcome to BanglaCamp</h1>
-          <p>
-              View our best campgrounds listing from all over the Bangladesh
-          </p>
-          <p>
-            <a href="/campgrounds/new" class="btn-custom btn-custom-1">Add a new camp</a>
-          </p>
-        </div>
-          
-      </header>
-  </div>
+    <div class="col-sm-12">
+        <header class="text-center">
+            <div class="hero-wrapper wow animate__animated animate__fadeInUp">
+                <h1>Welcome to BanglaCamp</h1>
+                <p>
+                    View our best campgrounds listing from all over the Bangladesh
+                </p>
+                <p>
+                    <a href="/campgrounds/new" class="btn-custom btn-custom-1">Add a new camp</a>
+                </p>
+            </div>
+
+        </header>
+    </div>
 </div>
 
 <div class="container">
-  <div class="row text-center">
-    <div class="col-md-12">
-    <% if(noMatch !== null) { %>
-      <h2><%= noMatch %></h2>
-    <% } %>
-    </div>
-  </div>
-
-<!-- show all campground -->
-
-  <div class="row text-center">
-    <% campgrounds.forEach(campground => { %>
-      <div class="col-sm-6 col-md-3 wow animate__animated animate__fadeIn" data-wow-duration="2.5s">
-        <div class="thumbnail">
-          <img src="<%=campground.image%>" alt="">
-          <div class="caption">
-            <h4><%=campground.name%></h4>
-          </div>
-          <p>
-            <a href="/campgrounds/<%= campground._id %>" class="custom-btn-3">More info</a>
-          </p>
+    <div class="row text-center">
+        <div class="col-md-12">
+            <% if(noMatch !== null) { %>
+            <h2><%= noMatch %></h2>
+            <% } %>
         </div>
-      </div>
-    <% })%>
-    
-  </div>
-  
+    </div>
+
+    <!-- show all campground -->
+
+    <div class="row text-center">
+        <% campgrounds.forEach(campground => { %>
+        <div class="col-sm-6 col-md-3 wow animate__animated animate__fadeIn" data-wow-duration="2.5s">
+            <div class="thumbnail">
+                <img src="<%=campground.image%>" alt="">
+                <div class="caption">
+                    <h4><%=campground.name%></h4>
+                </div>
+                <p>
+                    <a href="/campgrounds/<%= campground._id %>" class="custom-btn-3">More info</a>
+                </p>
+            </div>
+        </div>
+        <% })%>
+
+    </div>
+
 </div>
 
 
