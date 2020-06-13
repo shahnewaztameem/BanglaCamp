@@ -85,6 +85,9 @@ body {
 }
 .thumbnail img {
     width: 100%;
+    
+}
+.thumb-img-wrapper img {
     height: 174px;
 }
 .content-wrapper {
